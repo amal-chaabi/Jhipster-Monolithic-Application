@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span>Patients</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-patient" [routerLink]="['/patient/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Patient
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="patients?.length === 0">
+        <span>No patients found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="patients && patients.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Lastname</span></th>
+                    <th scope="col" ><span>Firstname</span></th>
+                    <th scope="col" ><span>Confidentiality Agreement</span></th>
+                    <th scope="col" ><span>Age</span></th>
+                    <th scope="col" ><span>Hometown</span></th>
+                    <th scope="col" ><span>Adress</span></th>
+                    <th scope="col" ><span>Social Security Number</span></th>
+                    <th scope="col" ><span>Phonenumber</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let patient of patients ;trackBy: trackId">
+                    <td><a [routerLink]="['/patient', patient.id, 'view']">{{ patient.id }}</a></td>
+                    <td>{{ patient.lastname }}</td>
+                    <td>{{ patient.firstname }}</td>
+                    <td>{{ patient.confidentialityAgreement }}</td>
+                    <td>{{ patient.age }}</td>
+                    <td>{{ patient.hometown }}</td>
+                    <td>{{ patient.adress }}</td>
+                    <td>{{ patient.socialSecurityNumber }}</td>
+                    <td>{{ patient.phonenumber }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/patient', patient.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/patient', patient.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(patient)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

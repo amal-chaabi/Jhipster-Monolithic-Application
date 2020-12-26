@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.mycompany.ehealth"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "monolith",
+    "baseName": "E_Health",
+    "packageName": "com.mycompany.ehealth",
+    "packageFolder": "com/mycompany/ehealth",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MjA2NjBlM2QxMGUwNGIxMjAxOGIyYjEzOTdiNWJjMmMxOTE5YTVmOTBkYTc0NDk4NWYzNDVjMTk4ZWE2ZjFiYjM0ZDBlM2I1NGFlZTBhOWM1MTE1NWU5Mzg1ZTUxNWViYmVmNWVhODE5MzBkMmM1Yzg3MjZhYWFiNWQwYWRiZTg=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1608989288640,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": [],
+    "lastLiquibaseTimestamp": 1608995665000
+  }
+}

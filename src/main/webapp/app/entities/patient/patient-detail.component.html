@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="patient">
+            <h2><span>Patient</span> {{ patient.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Lastname</span></dt>
+                <dd>
+                    <span>{{ patient.lastname }}</span>
+                </dd>
+                <dt><span>Firstname</span></dt>
+                <dd>
+                    <span>{{ patient.firstname }}</span>
+                </dd>
+                <dt><span>Confidentiality Agreement</span></dt>
+                <dd>
+                    <span>{{ patient.confidentialityAgreement }}</span>
+                </dd>
+                <dt><span>Age</span></dt>
+                <dd>
+                    <span>{{ patient.age }}</span>
+                </dd>
+                <dt><span>Hometown</span></dt>
+                <dd>
+                    <span>{{ patient.hometown }}</span>
+                </dd>
+                <dt><span>Adress</span></dt>
+                <dd>
+                    <span>{{ patient.adress }}</span>
+                </dd>
+                <dt><span>Social Security Number</span></dt>
+                <dd>
+                    <span>{{ patient.socialSecurityNumber }}</span>
+                </dd>
+                <dt><span>Phonenumber</span></dt>
+                <dd>
+                    <span>{{ patient.phonenumber }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/patient', patient.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
